@@ -1,4 +1,4 @@
-local timer = 0
+getgenv().timer = 0
 local tab = {}
 
 function tab:PlaceTower(posx,posy,posz,tower,timee)
