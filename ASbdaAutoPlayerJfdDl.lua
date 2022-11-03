@@ -1,4 +1,5 @@
 local timer = 0
+local Grass = nil
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime, Wave)
@@ -23,8 +24,22 @@ repeat wait() until workspace:FindFirstChild("Map")
 spawn(function() 
   while wait(1) do 
     timer = timer + 1 
-    rconsoleprint(timer.."\n") 
+    --rconsoleprint(timer.."\n") 
   end 
 end)
+
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if string.find(v.Name, "Grass") and not v:FindFirstChild("Team") then
+    v.Name = " "
+elseif string.find(v.Name, "Grass") and not v:FindFirstChild("Team").Value == game:GetService("Players").LocalPlayer.TeamColor then
+    v.Name = " "
+    end
+end
+wait(0.1)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Grass" and v:FindFirstChild("Team") then
+Grass = v
+    end
+end
 
 return tab
