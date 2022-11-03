@@ -11,6 +11,7 @@ end
 function tab:UpgradeTower(TowerNum, InTime)
 repeat wait() until workspace:FindFirstChild("Map")
 repeat wait() until timer >= InTime
+repeat wait() until workspace.Towers.TowerNum:FindFirstChild("Tower")
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
 end
 
@@ -21,6 +22,11 @@ game:GetService("Workspace").SellTower:InvokeServer(TowerNum)
 end
 
 repeat wait() until workspace:FindFirstChild("Map")
+
+while wait(1) do 
+timer = timer + 1 
+--rconsoleprint(timer.."\n") 
+end
 
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if string.find(v.Name, "Grass") and not v:FindFirstChild("Team") then
@@ -35,12 +41,5 @@ if v.Name == "Grass" and v:FindFirstChild("Team") then
 Grass = v
     end
 end
-
-spawn(function()
-while wait(1) do 
-timer = timer + 1 
---rconsoleprint(timer.."\n") 
-end
-end)
 
 return tab
