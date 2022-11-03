@@ -24,10 +24,12 @@ end
 repeat wait() until workspace:FindFirstChild("Map")
 
 spawn(function()
-while wait(1) do 
+while wait(1) do
+if workspace:FindFirstChild("Map") then
 timer = timer + 1 
 rconsoleprint(timer.."\n") 
-end
+        end
+    end
 end)
 
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
