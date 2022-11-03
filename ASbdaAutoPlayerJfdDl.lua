@@ -23,7 +23,7 @@ repeat wait() until workspace:FindFirstChild("Map")
 spawn(function() 
   while wait(1) do 
     timer = timer + 1 
-    rconsoleprint(timer) 
+    rconsoleprint(timer.."\n") 
   end 
 end)
 
