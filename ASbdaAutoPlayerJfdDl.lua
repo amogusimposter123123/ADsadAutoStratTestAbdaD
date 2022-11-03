@@ -2,8 +2,8 @@ local timer = 0
 local tab = {}
 
 function tab:PlaceTower(posx,posy,posz,tower,tim)
-repeat task.wait() until workspace:FindFirstChild("Map")
-repeat task.wait() until timer >= tim
+repeat wait() until workspace:FindFirstChild("Map")
+repeat wait() until timer >= tim
 game:GetService("Workspace").Placed:InvokeServer(Vector3.new(posx,posy,posz),1,tower,workspace.Map:FindFirstChild("Grass"))
 end
 
