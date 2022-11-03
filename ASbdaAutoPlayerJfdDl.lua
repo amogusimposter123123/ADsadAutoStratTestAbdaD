@@ -11,7 +11,7 @@ end
 function tab:UpgradeTower(TowerNum, InTime)
 repeat wait() until workspace:FindFirstChild("Map")
 repeat wait() until timer >= InTime
-repeat wait() until workspace.Towers.TowerNum:FindFirstChild("Tower")
+repeat wait() until workspace.Towers:FindFirstChild(TowerNum).Tower
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
 end
 
