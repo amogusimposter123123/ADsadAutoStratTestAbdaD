@@ -36,9 +36,11 @@ Grass = v
     end
 end
 
+spawn(function()
 while wait(1) do 
 timer = timer + 1 
 --rconsoleprint(timer.."\n") 
-end 
+end
+end)
 
 return tab
