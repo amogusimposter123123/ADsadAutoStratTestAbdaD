@@ -21,12 +21,6 @@ game:GetService("Workspace").SellTower:InvokeServer(TowerNum)
 end
 
 repeat wait() until workspace:FindFirstChild("Map")
-spawn(function() 
-  while wait(1) do 
-    timer = timer + 1 
-    --rconsoleprint(timer.."\n") 
-  end 
-end)
 
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if string.find(v.Name, "Grass") and not v:FindFirstChild("Team") then
@@ -41,5 +35,10 @@ if v.Name == "Grass" and v:FindFirstChild("Team") then
 Grass = v
     end
 end
+
+while wait(1) do 
+timer = timer + 1 
+--rconsoleprint(timer.."\n") 
+end 
 
 return tab
