@@ -2,8 +2,9 @@ local timer = 0
 local Grass = nil
 local tab = {}
 
-function tab:PlaceTower(x,y,z, Tower, InTime)
+function tab:PlaceTower(x,y,z, Tower, InTime, Cost)
 repeat wait() until timer >= InTime
+repeat wait() until game:GetService("Players").LocalPlayer.Information.Cash.Value > Cost or game:GetService("Players").LocalPlayer.Information.Cash.Value >= Cost
 game:GetService("Workspace").Placed:InvokeServer(Vector3.new(x,y,z),1,Tower,Grass)
 end
 
