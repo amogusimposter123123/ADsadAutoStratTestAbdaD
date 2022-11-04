@@ -3,14 +3,16 @@ local Grass = nil
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime)
-repeat wait(0.3) until timer >= InTime
+repeat wait(0.1) until timer >= InTime
 game:GetService("Workspace").Placed:InvokeServer(Vector3.new(x,y,z),1,Tower,Grass)
 end
 
 function tab:UpgradeTower(TowerNum, InTime)
-repeat wait(0.3) until timer >= InTime
+repeat wait(0.1) until timer >= InTime
 repeat wait() until workspace.Towers:FindFirstChild(TowerNum).Tower
+if timer >= InTime then
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
+    end
 end
 
 function tab:SellTower(TowerNum, InTime, Wave)
@@ -22,7 +24,7 @@ end
 repeat wait() until workspace:FindFirstChild("Map")
 
 spawn(function()
-while wait(1) do
+while wait(1.1) do
 if workspace:FindFirstChild("Map") then
 timer = timer + 1 
 rconsoleprint(timer.."\n") 
