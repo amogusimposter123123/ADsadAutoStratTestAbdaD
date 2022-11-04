@@ -22,7 +22,7 @@ end
 
 function tab:CommanderAbility(TowerNum, InTime)
 repeat wait() until timer >= InTime
-repeat wait() until game:GetService("Workspace").Towers:FindFirstChild(TowerNum).Tower.UP1.Value >= 2
+repeat wait() until game:GetService("Workspace").Towers:FindFirstChild(TowerNum).Tower.UP1.Value == 2
 game:GetService("Workspace").CallToArms:InvokeServer(TowerNum)
 end
 
