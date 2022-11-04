@@ -1,3 +1,5 @@
+repeat wait() until workspace:FindFirstChild("Map")
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 local timer = 0
 local Grass = nil
 local tab = {}
@@ -21,6 +23,7 @@ end
 
 function tab:CommanderAbility(TowerNum, InTime)
 repeat wait() until timer >= InTime
+repeat wait() until game:GetService("Workspace").Towers:FindFirstChild(TowerNum).Tower.UP1.Value >= 2
 game:GetService("Workspace").CallToArms:InvokeServer(TowerNum)
 end
 
@@ -34,7 +37,14 @@ rconsoleprint(timer.."\n")
         end
     end
 end)
-
+spawn(function()
+wait(2)
+if workspace:FindFirstChild("Map") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)+Vector3.new(0,5,0)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+    end
+end)
 for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 if string.find(v.Name, "Grass") and not v:FindFirstChild("Team") then
     v.Name = " "
@@ -48,5 +58,4 @@ if v.Name == "Grass" and v:FindFirstChild("Team") then
 Grass = v
     end
 end
-
 return tab
