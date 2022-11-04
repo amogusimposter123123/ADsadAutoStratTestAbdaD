@@ -3,14 +3,12 @@ local Grass = nil
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime)
-repeat wait() until workspace:FindFirstChild("Map")
-repeat wait() until timer >= InTime
+repeat wait(0.1) until timer >= InTime
 game:GetService("Workspace").Placed:InvokeServer(Vector3.new(x,y,z),1,Tower,Grass)
 end
 
 function tab:UpgradeTower(TowerNum, InTime)
-repeat wait() until workspace:FindFirstChild("Map")
-repeat wait() until timer >= InTime
+repeat wait(0.1) until timer >= InTime
 repeat wait() until workspace.Towers:FindFirstChild(TowerNum).Tower
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
 end
