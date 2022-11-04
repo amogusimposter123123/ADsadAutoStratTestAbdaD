@@ -32,7 +32,7 @@ spawn(function()
 while wait(1.5) do
 if workspace:FindFirstChild("Map") then
 timer = timer + 1 
-rconsoleprint(timer.."\n") 
+--rconsoleprint(timer.."\n") 
         end
     end
 end)
