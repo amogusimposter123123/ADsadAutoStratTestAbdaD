@@ -1,6 +1,6 @@
 local timer = 0
 local Grass = nil
-local Cash = game.Players.LocalPlayer.Information.Cash.Value
+local Cash = game:GetService("Players").LocalPlayer.Information.Cash
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime)
@@ -20,7 +20,7 @@ repeat wait() until timer >= InTime and workspace.Waves:FindFirstChild("Wave").V
 game:GetService("Workspace").SellTower:InvokeServer(TowerNum)
 end
 
-repeat wait() until workspace:FindFirstChild("Map")
+repeat wait() until game:GetService("Workspace"):FindFirstChild("Map")
 
 spawn(function()
 while wait(1) do
