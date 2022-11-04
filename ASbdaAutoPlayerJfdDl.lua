@@ -39,7 +39,7 @@ end)
 spawn(function()
 wait(2)
 if workspace:FindFirstChild("Map") then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)+Vector3.new(0,15,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)+Vector3.new(0,35,0)
 wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
     end
