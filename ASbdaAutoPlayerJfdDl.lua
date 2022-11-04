@@ -13,10 +13,14 @@ repeat wait() until game:GetService("Players").LocalPlayer.Information.Cash.Valu
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
 end
 
-function tab:SellTower(TowerNum, InTime, Wave)
-repeat wait() until workspace:FindFirstChild("Map")
-repeat wait() until timer >= InTime and workspace.Waves:FindFirstChild("Wave").Value == Wave
+function tab:SellTower(TowerNum, InTime)
+repeat wait() until timer >= InTime
 game:GetService("Workspace").SellTower:InvokeServer(TowerNum)
+end
+
+function tab:CommanderAbility(TowerNum, InTime)
+repeat wait() until timer >= InTime
+game:GetService("Workspace").CallToArms:InvokeServer(TowerNum)
 end
 
 repeat wait() until game:GetService("Workspace"):FindFirstChild("Map")
