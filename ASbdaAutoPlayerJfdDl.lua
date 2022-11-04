@@ -9,7 +9,7 @@ end
 
 function tab:UpgradeTower(TowerNum, InTime)
 repeat wait(0.1) until timer >= InTime
-repeat wait() until workspace.Towers:FindFirstChild(TowerNum).Tower
+repeat wait(0.1) until workspace.Towers:FindFirstChild(TowerNum).Tower and timer >= InTime
 if timer >= InTime then
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
     end
@@ -24,7 +24,7 @@ end
 repeat wait() until workspace:FindFirstChild("Map")
 
 spawn(function()
-while wait(1.1) do
+while wait(1) do
 if workspace:FindFirstChild("Map") then
 timer = timer + 1 
 rconsoleprint(timer.."\n") 
