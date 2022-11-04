@@ -1,6 +1,6 @@
 local timer = 0
 local Grass = nil
-local Cash = game:GetService("Players").LocalPlayer.Information.Cash
+local Cash = game:GetService("Players").LocalPlayer.Information.Cash.Value
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime)
