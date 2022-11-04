@@ -1,5 +1,4 @@
-repeat wait() until workspace:FindFirstChild("Map")
-game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+
 local timer = 0
 local Grass = nil
 local tab = {}
