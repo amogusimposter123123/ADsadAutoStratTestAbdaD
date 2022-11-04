@@ -1,18 +1,17 @@
 local timer = 0
 local Grass = nil
+local Cash = game.Players.LocalPlayer.Information.Cash.Value
 local tab = {}
 
 function tab:PlaceTower(x,y,z, Tower, InTime)
-repeat wait(0.1) until timer >= InTime
+repeat wait() until timer >= InTime
 game:GetService("Workspace").Placed:InvokeServer(Vector3.new(x,y,z),1,Tower,Grass)
 end
 
-function tab:UpgradeTower(TowerNum, InTime)
-repeat wait(0.1) until timer >= InTime
-repeat wait(0.1) until workspace.Towers:FindFirstChild(TowerNum).Tower and timer >= InTime
-if timer >= InTime then
+function tab:UpgradeTower(TowerNum, InTime, Cost)
+repeat wait() until timer >= InTime
+repeat wait() until Cash > Cost or Cash >= Cost
 game:GetService("Workspace").UpgradeTower:InvokeServer(TowerNum)
-    end
 end
 
 function tab:SellTower(TowerNum, InTime, Wave)
