@@ -26,10 +26,10 @@ repeat wait() until game:GetService("Workspace").Towers:FindFirstChild(TowerNum)
 game:GetService("Workspace").CallToArms:InvokeServer(TowerNum)
 end
 
-repeat wait() until game:GetService("Workspace"):FindFirstChild("Map")
+repeat task.wait() until game:GetService("Workspace"):FindFirstChild("Map")
 
 spawn(function()
-while wait(1) do
+while task.wait(1) do
 if workspace:FindFirstChild("Map") then
 timer = timer + 1 
 --rconsoleprint(timer.."\n") 
